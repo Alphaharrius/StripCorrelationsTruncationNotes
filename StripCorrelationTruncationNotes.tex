@@ -1,0 +1,122 @@
+\documentclass[%
+    reprint,
+    amsmath,amssymb,
+    aps,
+    floatfix,
+]{revtex4-2}
+
+\usepackage{braket, nccmath}
+\usepackage{graphicx, verbatim}
+\usepackage{dcolumn} % Align table columns on decimal point
+\usepackage{bm} % Bold math
+\usepackage{hyperref} % Add hypertext capabilities
+\usepackage{dsfont} % Add double stroke fonts
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+}
+
+\usepackage{amsthm}
+\theoremstyle{plain}
+
+\DeclareMathOperator{\Tr}{Tr}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+\pdfstringdefDisableCommands{\def\eqref#1{(\ref{#1})}}
+
+\begin{document}
+
+\title{2-D Metallic State Strip Correlation Truncation Notes}
+
+\author{Hing Nin Chan}
+\affiliation{Department of Physics, Hong Kong University of Science and Technology, Hong Kong, China}
+
+\begin{abstract}
+    Since the 2-D metallic state has a entanglement entropy proportional to $L log L$, where $L$ is the system
+    size. Hence it is expected that the renormalization group have a branching tree structure. In this note, we 
+    will describe how to obtain the correlation matrix for the 1-D metallic states from the 2-D metallic system.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+The 2-D metallic state can be fully described by its correlation matrix denoted as $C_{2D}$, in our context it can 
+be described as a Fock Map, which is a rank-2 tensor that transform one Hilbert space to another. Thus we can denote 
+$C_{2D}: \mathcal{R} \rightarrow \mathcal{R}$, where $\mathcal{R}$ is the Hilbert space of the 2-D metallic state in 
+the physical space. A similar description in the reciprocal space can be used $C_{2D}: \mathcal{K} \rightarrow \mathcal{K}$ 
+where $\mathcal{K}$ is the Hilbert space of the 2-D metallic state in the reciprocal space.
+
+\section{Strip Correlation Matrix}
+Since the 2-D metallic state we are considering have a Fermi surface perpendicular to the reciprocal space vector 
+$\vec{v}_{g} = [1,1]^T$ in the square space, thus we expect the 1-D metallic state to be localized within strips parallel 
+to $\vec{v}_{g}$. Which we can express the 1-D metallic state in terms of the basis that is translational invariance along 
+the $\vec{v}_{g}$ direction.
+
+\newcommand\blockedcorrelations{C_{2D}^{\mathcal{B}}}
+
+To have enough degrees of freedom to perform our strip metal distillation process, we will perform a uniform scaling with a factor 
+of $4$. We will denote the scaled correlation matrix as $\blockedcorrelations$.
+
+In order to obtain the correlation matrix for a single 1-D metallic state parallel to $\vec{v}_{g}$, we have to first find 
+the correlation matrix $\blockedcorrelations$ expressed in terms of the translational invariance of the $\vec{v}_{g}$ direction. In order 
+to complete then span of the 2-D space we use a non-trivial method with Smith normal form to find another real-space basis 
+to complete the 2-D space.
+
+\begin{equation}
+    \label{eq:StripRealSpaceBasis}
+    \mathcal{R}_{S} =
+    \begin{bmatrix}
+        1 & 0 \\
+        1 & L_y
+    \end{bmatrix}
+\end{equation}
+
+$\mathcal{R}_{S}$ is the column basis and $L_y$ is the number of lattice sites in the $y$ direction, actually one can also 
+use the $x$ direction since it will still span the same 2-D space.
+
+\newcommand\scaledcorrelations{C_{2D}^{S}}
+
+The new crystal represented in $\mathcal{R}_{strip}$ basis will have the size of $1 \times L_x$ since all sites in the $y$ direction 
+are grouped into a single unit cell. Denote the transformed correlation matrix as $\scaledcorrelations$.
+
+After that we will perform a strip restriction on $\scaledcorrelations$ with a real-space strip that have a width correlated with the 
+correlation length of the 1-D metallic state in the perpendicular direction of $\vec{v}_{g}$, and we can find a strip unit-cell with 
+length of $norm(\vec{v}_{g})$. This process can be done by applying a Fourier isometry on $\scaledcorrelations$ back to the real space.
+
+\newcommand\restrictedfourier{\mathcal{F}_{\mathcal{R}}}
+
+\begin{equation}
+    \label{eq:StripUnitCellRestrictedCorrelations}
+    C_{\mathcal{R}} = \restrictedfourier^{\dagger} \scaledcorrelations \restrictedfourier
+\end{equation}
+
+\section{Reasons to perform Strip Correlation Matrix Truncation}
+
+After that we will perform a Fourier transform with translational invariance along the $\vec{v}_{g}$ direction to obtain the strip correlation 
+matrix of the single 1-D strip region, denote it as $C_{strip}$. This is not the correlation matrix resembling the 1-D metallic state yet, since 
+by inspecting the correlation spectrum of this matrix we can see that it is not a pure state, thus we will have to locate the degrees of freedom 
+that attributes a pure state within this spectrum. Technically we will do it by applying a threshold filtering to the correlation spectrum such 
+that only the degrees of freedom that have correlation values close to $0$ or $1$ will be selected. Then we will obtain the correlation matrix of 
+the 1-D metallic state $C_{metal} = \mathds{1} - \mathcal{P}_{pure}$ where $\mathcal{P}_{pure}$ is the projector from the selected modes.
+
+When one observe the correlation spectrum of $C_{metal}$, we will see a pole at the $\Gamma$ point in the reciprocal space of the 1-D strip space, 
+in such we cannot identify a set of filled degrees of freedom that can be used to describe the 1-D metallic state. From the properties of Fourier 
+transform, we know that a pole in the reciprocal space means there are delocalization behavior in the real space, thus we can perform a truncation 
+of the correlation matrix in the real space, which is equivalent to cutting all correlations that have range longer than some real space distance, 
+and that distance is determined by the correlation length of the 1-D metallic state in the direction of $\vec{v}_{g}$.
+
+\section{Methodology}
+Going back to $C_{strip}$, we can construct a free-fermion Hamiltonian $H_{frozen}$ that have all the frozen degrees of freedom which are the ones 
+with correlation value close to $0$ or $1$. Then we can perform a Fourier isometry on $H_{frozen}$ to restrict the Hamiltonian to a region with radius 
+of the truncation length. This region normally will be a enlongated unit cell of the strip crystal, when we perform the Fourier transform with 
+translational invariance along the $\vec{v}_{g}$ direction, the resulting Hamiltonian $H_{frozen}'$ will have multi-counting since the region overlaps 
+under translation with $\vec{v}_{g}$, thus we have to manually remove the multi-counting.
+
+By inspecting the spectrum of $H_{frozen}'$ in the reciprocal space of the strip crystal, we can see that there will be a set of bands in the lower 
+eigenvalues, those will be the frozen degrees of freedom corresponding to the 1-D metallic state, and thus we can construct a pure state correlation matrix 
+by $C_{metal}' = \mathds{1} - \mathcal{P}_{frozen}'$, which will be the correlation matrix of filling all the 1-D metallic single fermion states.
+
+\end{document}
