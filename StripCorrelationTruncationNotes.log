@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.20)  22 JAN 2024 22:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.20)  23 JAN 2024 01:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/alphaharrius/LaTexProjects/StripCorrelationTruncationNotes/StripCorrelationTruncationNotes
-(/Users/alphaharrius/LaTexProjects/StripCorrelationTruncationNotes/StripCorrelationTruncationNotes.tex
+**/Users/alphaharrius/LaTexProjects/StripCorrelationsTruncationNotes/StripCorrelationTruncationNotes
+(/Users/alphaharrius/LaTexProjects/StripCorrelationsTruncationNotes/StripCorrelationTruncationNotes.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023basic/texmf-dist/tex/latex/revtex/revtex4-2.cls
 Document Class: revtex4-2 2020/10/03 4.2e (https://journals.aps.org/revtex/ for documentation)
@@ -419,18 +419,18 @@ Package rerunfilecheck Info: File `StripCorrelationTruncationNotes.out' has not 
 (rerunfilecheck)             Checksum: D241234D4D3EA6BC7B1D46EFA66822DB;1166.
  ) 
 Here is how much of TeX's memory you used:
- 11876 strings out of 477476
- 183121 string characters out of 5824244
+ 11879 strings out of 477476
+ 183178 string characters out of 5824244
  1880388 words of memory out of 5000000
- 31930 multiletter control sequences out of 15000+600000
+ 31932 multiletter control sequences out of 15000+600000
  522929 words of font info for 73 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,6n,76p,471b,518s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,76p,472b,518s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2023basic/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on StripCorrelationTruncationNotes.pdf (2 pages, 148771 bytes).
+Output written on StripCorrelationTruncationNotes.pdf (2 pages, 150993 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
+ 112 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

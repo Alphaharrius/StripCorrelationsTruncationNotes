@@ -110,7 +110,17 @@ and that distance is determined by the correlation length of the 1-D metallic st
 
 \section{Methodology}
 Going back to $C_{strip}$, we can construct a free-fermion Hamiltonian $H_{frozen}$ that have all the frozen degrees of freedom which are the ones 
-with correlation value close to $0$ or $1$. Then we can perform a Fourier isometry on $H_{frozen}$ to restrict the Hamiltonian to a region with radius 
+with correlation value close to $0$ or $1$.
+
+\begin{equation}
+    \label{eq:StripGlobalDistillHamiltonian}
+    H_{frozen} = \sum_{k} - |\psi_{k}^{frozen} \rangle \langle \psi_{k}^{frozen}|
+\end{equation}
+
+From equation \ref{eq:StripGlobalDistillHamiltonian} we can see that all frozen modes will span the non-zero $-ve$ bands and the remaining modes 
+which are not localized within the strip region, will span the null space.
+
+Then we can perform the truncation by applying a Fourier isometry on $H_{frozen}$ to restrict the Hamiltonian to a region with radius 
 of the truncation length. This region normally will be a enlongated unit cell of the strip crystal, when we perform the Fourier transform with 
 translational invariance along the $\vec{v}_{g}$ direction, the resulting Hamiltonian $H_{frozen}'$ will have multi-counting since the region overlaps 
 under translation with $\vec{v}_{g}$, thus we have to manually remove the multi-counting.
